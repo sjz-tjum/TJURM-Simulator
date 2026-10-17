@@ -1,4 +1,4 @@
-// ArenaStructures.h —— 阶段2：基地/前哨/堡垒 + 占点区（控制度）
+﻿// ArenaStructures.h —— 阶段2：基地/前哨/堡垒 + 占点区（控制度）
 // 来源：config/rules.json -> official.structures / maps[rmuc2027].zones
 //       simulation/src/season2027.rs（基地开放、前哨转子时序）
 //       simulation/src/lib.rs（Zone / ZoneState）
@@ -19,18 +19,18 @@ namespace ArenaReferee2027
 // ============================================================================
 namespace Rules
 {
-    inline constexpr float kBaseHp = 5000.0f;
-    inline constexpr float kOutpostHp = 1500.0f;
-    inline constexpr bool  bBaseInvulnerableWhileOutpostAlive = true;
-    inline constexpr float kBaseOpensAtHpLte = 2000.0f;
-    inline constexpr float kRebuildLossStepHp = 1000.0f;
-    inline constexpr float kRebuildHp = 750.0f;
-    inline constexpr float kRebuildHoldHeroInfantryS = 10.0f;
-    inline constexpr float kRebuildHoldEngineerS = 5.0f;
-    inline constexpr float kRebuildDisabledAtS = 300.0f;
-    inline constexpr float kOutpostAccelerationS = 5.0f;
-    inline constexpr float kOutpostStopAfterS = 180.0f;
-    inline constexpr float kOutpostReturnInitialS = 10.0f;
+    static constexpr float kBaseHp = 5000.0f;
+    static constexpr float kOutpostHp = 1500.0f;
+    static constexpr bool  bBaseInvulnerableWhileOutpostAlive = true;
+    static constexpr float kBaseOpensAtHpLte = 2000.0f;
+    static constexpr float kRebuildLossStepHp = 1000.0f;
+    static constexpr float kRebuildHp = 750.0f;
+    static constexpr float kRebuildHoldHeroInfantryS = 10.0f;
+    static constexpr float kRebuildHoldEngineerS = 5.0f;
+    static constexpr float kRebuildDisabledAtS = 300.0f;
+    static constexpr float kOutpostAccelerationS = 5.0f;
+    static constexpr float kOutpostStopAfterS = 180.0f;
+    static constexpr float kOutpostReturnInitialS = 10.0f;
 }
 
 enum class EStructureKind : uint8_t { Base, Outpost, Fortress, Supply };

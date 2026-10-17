@@ -1,4 +1,4 @@
-// ArenaReferee.h —— 从 Arena-1（Rust 引擎）移植的 RMUC 2027 裁判核心
+﻿// ArenaReferee.h —— 从 Arena-1（Rust 引擎）移植的 RMUC 2027 裁判核心
 //
 // 来源对照：
 //   simulation/src/lib.rs        -> 引擎数据结构（Robot/Base/Team/Zone/ZoneState/Projectile/Engine）
@@ -24,88 +24,88 @@ namespace ArenaReferee2027
 namespace Rules
 {
     // -- match --
-    inline constexpr float kMatchDurationS = 420.0f;
-    inline constexpr float kFieldLengthM = 28.0f;
-    inline constexpr float kFieldWidthM = 15.0f;
-    inline constexpr float kPrepS = 180.0f;
-    inline constexpr float kSelfCheckS = 15.0f;
-    inline constexpr float kCountdownS = 5.0f;
+    static constexpr float kMatchDurationS = 420.0f;
+    static constexpr float kFieldLengthM = 28.0f;
+    static constexpr float kFieldWidthM = 15.0f;
+    static constexpr float kPrepS = 180.0f;
+    static constexpr float kSelfCheckS = 15.0f;
+    static constexpr float kCountdownS = 5.0f;
 
     // -- damage --
-    inline constexpr float kDamage17 = 20.0f;
-    inline constexpr float kDamage42 = 200.0f;
-    inline constexpr float kDamageCollision = 2.0f;
-    inline constexpr float kNormalSpeedMin17Mps = 12.0f;
-    inline constexpr float kNormalSpeedMin42Mps = 10.0f;
-    inline constexpr float kArmorIntervalS = 0.05f;
-    inline constexpr float kArmorInterval42MaxS = 0.2f;
-    inline constexpr float kWeakspotWidthM = 0.01f;
-    inline constexpr float kWeakspotHeightM = 0.01f;
-    inline constexpr float kWeakspotMultiplier = 1.5f;
+    static constexpr float kDamage17 = 20.0f;
+    static constexpr float kDamage42 = 200.0f;
+    static constexpr float kDamageCollision = 2.0f;
+    static constexpr float kNormalSpeedMin17Mps = 12.0f;
+    static constexpr float kNormalSpeedMin42Mps = 10.0f;
+    static constexpr float kArmorIntervalS = 0.05f;
+    static constexpr float kArmorInterval42MaxS = 0.2f;
+    static constexpr float kWeakspotWidthM = 0.01f;
+    static constexpr float kWeakspotHeightM = 0.01f;
+    static constexpr float kWeakspotMultiplier = 1.5f;
 
     // -- heat --
-    inline constexpr float kHeatSettlementHz = 10.0f;
-    inline constexpr float kPermanentExtraHeat17 = 100.0f;
-    inline constexpr float kPermanentExtraHeat42 = 200.0f;
+    static constexpr float kHeatSettlementHz = 10.0f;
+    static constexpr float kPermanentExtraHeat17 = 100.0f;
+    static constexpr float kPermanentExtraHeat42 = 200.0f;
 
     // -- power --
-    inline constexpr float kPowerSettlementHz = 10.0f;
-    inline constexpr float kBufferCapacityJ = 60.0f;
-    inline constexpr float kPowerCutoffS = 5.0f;
-    inline constexpr float kInitialEnergyJ = 20000.0f;
-    inline constexpr float kMaxEnergyJ = 40000.0f;
-    inline constexpr float kEnergySavingPowerW = 35.0f;
-    inline constexpr float kEnhancedThresholdJ = 25000.0f;
-    inline constexpr float kEnhancedMultiplier = 1.25f;
-    inline constexpr float kAbsoluteCapW = 200.0f;
-    inline constexpr float kWirelessSupplyMaxW = 200.0f;
-    inline constexpr float kWirelessTransferMaxW = 120.0f;
+    static constexpr float kPowerSettlementHz = 10.0f;
+    static constexpr float kBufferCapacityJ = 60.0f;
+    static constexpr float kPowerCutoffS = 5.0f;
+    static constexpr float kInitialEnergyJ = 20000.0f;
+    static constexpr float kMaxEnergyJ = 40000.0f;
+    static constexpr float kEnergySavingPowerW = 35.0f;
+    static constexpr float kEnhancedThresholdJ = 25000.0f;
+    static constexpr float kEnhancedMultiplier = 1.25f;
+    static constexpr float kAbsoluteCapW = 200.0f;
+    static constexpr float kWirelessSupplyMaxW = 200.0f;
+    static constexpr float kWirelessTransferMaxW = 120.0f;
 
     // -- heal --
-    inline constexpr float kDisengageS = 6.0f;
-    inline constexpr float kSupplyRatioPerS = 0.1f;
-    inline constexpr float kLateStartS = 240.0f;
-    inline constexpr float kLateDisengagedSupplyRatioPerS = 0.25f;
-    inline constexpr float kRemoteDelayS = 6.0f;
-    inline constexpr float kRemoteRatio = 0.6f;
+    static constexpr float kDisengageS = 6.0f;
+    static constexpr float kSupplyRatioPerS = 0.1f;
+    static constexpr float kLateStartS = 240.0f;
+    static constexpr float kLateDisengagedSupplyRatioPerS = 0.25f;
+    static constexpr float kRemoteDelayS = 6.0f;
+    static constexpr float kRemoteRatio = 0.6f;
 
     // -- respawn --
-    inline constexpr float kRespawnProgressBase = 10.0f;
-    inline constexpr float kRespawnElapsedDivisor = 10.0f;
-    inline constexpr float kInstantPurchaseProgressPenalty = 20.0f;
-    inline constexpr float kNormalProgressPerS = 1.0f;
-    inline constexpr float kSupplyOrBaseBelow2000ProgressPerS = 4.0f;
-    inline constexpr float kBaseLowHpStrictThreshold = 2000.0f;
-    inline constexpr float kNormalHpRatio = 0.1f;
-    inline constexpr float kNormalInvulnerabilityS = 30.0f;
-    inline constexpr float kInstantHpRatio = 1.0f;
-    inline constexpr float kInstantInvulnerabilityS = 3.0f;
-    inline constexpr float kInstantPowerMultiplier = 2.0f;
-    inline constexpr float kInstantPowerCapW = 200.0f;
-    inline constexpr float kInstantPowerDurationS = 4.0f;
+    static constexpr float kRespawnProgressBase = 10.0f;
+    static constexpr float kRespawnElapsedDivisor = 10.0f;
+    static constexpr float kInstantPurchaseProgressPenalty = 20.0f;
+    static constexpr float kNormalProgressPerS = 1.0f;
+    static constexpr float kSupplyOrBaseBelow2000ProgressPerS = 4.0f;
+    static constexpr float kBaseLowHpStrictThreshold = 2000.0f;
+    static constexpr float kNormalHpRatio = 0.1f;
+    static constexpr float kNormalInvulnerabilityS = 30.0f;
+    static constexpr float kInstantHpRatio = 1.0f;
+    static constexpr float kInstantInvulnerabilityS = 3.0f;
+    static constexpr float kInstantPowerMultiplier = 2.0f;
+    static constexpr float kInstantPowerCapW = 200.0f;
+    static constexpr float kInstantPowerDurationS = 4.0f;
 
     // -- economy --
-    inline constexpr int32_t kInitialCoins = 400;
+    static constexpr int32_t kInitialCoins = 400;
     struct FCoinTick { float ElapsedS; int32_t Coins; };
-    inline constexpr FCoinTick kCoinSchedule[] = {
+    static constexpr FCoinTick kCoinSchedule[] = {
         {61.0f, 50}, {121.0f, 50}, {181.0f, 50}, {241.0f, 50}, {301.0f, 50}, {361.0f, 150}};
 
     // -- experience --
-    inline constexpr int32_t kXpThresholds[] = {0, 550, 1100, 1650, 2200, 2750, 3300, 3850, 4400, 5000};
-    inline constexpr int32_t kXpInitialCap = 5;
-    inline constexpr int32_t kXpCapAfterAssembly2 = 7;
-    inline constexpr int32_t kXpCapAfterAssembly3 = 10;
-    inline constexpr float kShotXp17 = 1.0f;
-    inline constexpr float kShotXp42 = 10.0f;
-    inline constexpr float kRobotDamageXpPerHp = 4.0f;
-    inline constexpr float kOutpostDamageXpPerHp = 2.0f;
-    inline constexpr float kBaseDamageXpPerHp = 0.5f;
-    inline constexpr float kKillBaseXp = 50.0f;
-    inline constexpr float kTerrainFirstXp = 300.0f;
+    static constexpr int32_t kXpThresholds[] = {0, 550, 1100, 1650, 2200, 2750, 3300, 3850, 4400, 5000};
+    static constexpr int32_t kXpInitialCap = 5;
+    static constexpr int32_t kXpCapAfterAssembly2 = 7;
+    static constexpr int32_t kXpCapAfterAssembly3 = 10;
+    static constexpr float kShotXp17 = 1.0f;
+    static constexpr float kShotXp42 = 10.0f;
+    static constexpr float kRobotDamageXpPerHp = 4.0f;
+    static constexpr float kOutpostDamageXpPerHp = 2.0f;
+    static constexpr float kBaseDamageXpPerHp = 0.5f;
+    static constexpr float kKillBaseXp = 50.0f;
+    static constexpr float kTerrainFirstXp = 300.0f;
 
     // -- overspeed (17mm) --
     struct FOverspeedTier { float ExcessFrom; float ExcessTo; float LockS; bool bPermanent; };
-    inline constexpr FOverspeedTier kOverspeed17[] = {
+    static constexpr FOverspeedTier kOverspeed17[] = {
         {0.0f, 5.0f, 15.0f, false}, {5.0f, 10.0f, 20.0f, false}, {10.0f, 1e9f, 0.0f, true}};
 }
 
